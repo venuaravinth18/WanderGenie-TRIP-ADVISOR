@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WanderGenie - AI Travel Planner</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="background-animation"></div>
+  
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">WanderGenie <i class="fas fa-magic"></i></a>
+      <div class="nav-links">
+        <span class="user-email"><i class="fas fa-user"></i> demo@wandergenie.com</span>
+        <span class="user-email"><i class="fas fa-user"></i> venuaravinth2005@gmail.com</span>
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <button class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container main-container">
+    <h1 class="animated fadeInDown">Your Personal AI Travel Planner</h1>
+    <p class="subtitle animated fadeIn delay-1">Let our genie craft your perfect itinerary!</p>
+    
+    <div class="form-container animated fadeInUp delay-2">
+      <form id="travelForm">
+        <div class="form-group">
+          <label for="destination"><i class="fas fa-map-marker-alt"></i> Destination:</label>
+          <input
+            type="text"
+            id="destination"
+            required
+            placeholder="Where do you want to go?"
+          />
+        </div>
+        <div class="form-group">
+          <label for="startDate"><i class="far fa-calendar-alt"></i> Start Date:</label>
+          <input type="date" id="startDate" required />
+        </div>
+        <div class="form-group">
+          <label for="endDate"><i class="far fa-calendar-alt"></i> End Date:</label>
+          <input type="date" id="endDate" required />
+        </div>
+        <button type="submit" class="animated pulse">
+          <i class="fas fa-wand-magic-sparkles"></i> Generate Magic Itinerary
+        </button>
+      </form>
+    </div>
+    
+    <div id="loading" class="loading hidden">
+      <div class="spinner"></div>
+      <p>Our genie is crafting your perfect plan...</p>
+    </div>
+    
+    <div id="results" class="results hidden animated fadeIn">
+      <h2><i class="fas fa-scroll"></i> Your Travel Itinerary</h2>
+      <table id="itineraryTable">
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th>Time</th>
+            <th>Activity</th>
+          </tr>
+        </thead>
+        <tbody id="itineraryBody"></tbody>
+      </table>
+      
+      <button class="print-btn" onclick="window.print()">
+        <i class="fas fa-print"></i> Print Itinerary
+      </button>
+    </div>
+  </div>
+
+  <footer class="footer animated fadeInUp delay-3">
+    <div class="container">
+      <p>&copy; 2023 WanderGenie. All rights reserved.</p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>
